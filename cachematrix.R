@@ -14,6 +14,13 @@ cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
 }
 
+##a square invertible matrix
+## return: a list containing functions to
+##              1. set the matrix
+##              2. get the matrix
+##              3. set the inverse
+##              4. get the inverse
+##         this list is used as the input to cacheSolve()
 makeCacheMatrix <- function(x = matrix()) {
         
         i <- NULL
@@ -31,7 +38,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 getinverse = getinverse
         )
 }
-
+##inverse of the original matrix input to makeCacheMatrix
 cacheSolve <- function(x, ...) {
         inv <- x$getinverse()
         if(!is.null(inv)) {
